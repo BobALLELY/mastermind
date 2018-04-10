@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+    <groupId>com.wedoogift</groupId>
+	<artifactId>mastermind</artifactId>
+	<name>mastermind</name>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+  
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring.cloud.version>Dalston.SR3</spring.cloud.version>
+        <spring.boot.version>1.5.6.RELEASE</spring.boot.version>
+        <spring.boot.admin.version>1.5.4</spring.boot.admin.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ewd-snapshots</id>
+			<url>http://nexusorc.orchestra:8081/content/repositories/ewd-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>ewd-releases</id>
+			<url>http://nexusorc.orchestra:8081/content/repositories/ewd-releases/</url>
+		</repository>
+	</distributionManagement>
+	
+	<scm>
+	   <connection>scm:git:http://stashprod.orchestra/scm/archi/cowo-linkmanager.git</connection>
+	   <url>scm:git:http://stashprod.orchestra/scm/archi/cowo-linkmanager.git</url>
+	   <developerConnection>scm:git:http://stashprod.orchestra/scm/archi/cowo-linkmanager.git</developerConnection>
+	  <tag>HEAD</tag>
+  	</scm>
+
+	<modules>
+		<module>dao</module>
+		<module>datamodel</module>
+		<module>service</module>
+    </modules>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<!-- Import dependency management from Spring Cloud -->
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+		</plugins>
+	</build>
+
+</project>
