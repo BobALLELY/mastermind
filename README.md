@@ -8,11 +8,13 @@ Le projet est découpé en 3 packages:
 Attention, ce projet ne dispose pas de vue. Pour cela, voir la partie "évolutions possibles".
 
 # Pions disponibles
-Le nombre de pions de couleurs différentes est de 4 et les couleurs sont: 
+Le nombre de pions de couleurs différentes est de 6 et les couleurs sont: 
 - jaune 
 - bleu
 - rouge 
 - vert
+- orange
+- noir
 
 Il y a également des pions noirs, blancs et transparents utilisés pour donner des indications à chaque étape du jeu.
 

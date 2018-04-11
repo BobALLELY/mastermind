@@ -36,6 +36,12 @@ public class MastermindObjectMapper {
     else if(IMastermindConstants._GREEN.equals(gamePawn.getColor())) {
       return 4;
     }
+    else if(IMastermindConstants._DARK.equals(gamePawn.getColor())) {
+      return 5;
+    }
+    else if(IMastermindConstants._ORANGE.equals(gamePawn.getColor())) {
+      return 6;
+    }
 
     return 0;
   }
@@ -52,6 +58,12 @@ public class MastermindObjectMapper {
     }
     else if(4 == value.intValue()) {
       return new GamePawn(IMastermindConstants._GREEN);
+    }
+    else if(5 == value.intValue()) {
+      return new GamePawn(IMastermindConstants._DARK);
+    }
+    else if(6 == value.intValue()) {
+      return new GamePawn(IMastermindConstants._ORANGE);
     }
 
     return null;
